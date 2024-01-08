@@ -327,7 +327,7 @@ if (isset($_POST['btnSave'])) {
     }
 }
 
-if (isset($_POST['btnPitch'])) {
+if (isset($_POST['submitBtnPitching'])) {
     $video_pitch_name = $_FILES['video_pitch']['name'];
     $video_pitch_tmp_name = $_FILES['video_pitch']['tmp_name'];
     $video_pitch_error = $_FILES['video_pitch']['error'];
@@ -806,16 +806,16 @@ if (isset($_POST['btnPitch'])) {
                                     <source src="videos/<?php echo $video_pitch ?>" type="video/mp4">
                                 </video>
                                 <label for="project_video"><h5>Select another video:</h5></label>
-                                <input type="file" name="project_video">
+                                <input type="file" name="video_pitch">
 
-                                <h5>Comment Logo</h5>
+                                <h5>Comment Video</h5>
                                 <textarea cols="100" rows="5" readonly><?php echo $comment_video ?></textarea>
                                 <?php
                             }else {
                                 //if wala pang record
                                 ?>
                                 <label for="project_video"><h5>Project Video Pitch :</h5></label>
-                                <input type="file" name="project_video" required>
+                                <input type="file" name="video_pitch" required>
                                 <?php
                             }
                         
@@ -830,13 +830,13 @@ if (isset($_POST['btnPitch'])) {
                                 $PitchDeck = $row['PitchDeck'];
                                 //if merong record
                                 ?>
-                                <h3>Project Model Canvass:</h3>
+                                <h3>Project Pitch Deck:</h3>
                                 <embed type="application/pdf" src="pdf/<?php echo $PitchDeck; ?>" width="580" height="600">
 
-                                <label for="model_canvas"><h5>Select Another Model Canvas: </h5></label>
-                                <input type="file" name="model_canvas">
+                                <label for="model_canvas"><h5>Select Another Pitch Deck: </h5></label>
+                                <input type="file" name="pitch_deck">
 
-                                <h5>Comment Model Canvas</h5>
+                                <h5>Comment Pitch Deck</h5>
                                 <textarea cols="100" rows="5" readonly><?php echo $comment_deck ?></textarea>
 
                                 <?php
@@ -844,15 +844,14 @@ if (isset($_POST['btnPitch'])) {
                                 //if wala pang record
                                 ?>
                                 <label for="model_canvas"><h5>Startup Model Canvas: </h5></label>
-                                <input type="file" name="model_canvas" required>
+                                <input type="file" name="pitch_deck" required>
                                 <?php
                             }
                         
                         ?>
 
                         <div>
-                            <button class="saveBtn" name="btnSave">SAVE</button>
-                            <button class="submitBtn" name="submitBtn">SUBMIT</button>
+                            <button class="submitBtnPitching" name="submitBtnPitching">SUBMIT</button>
                         </div>
                         
                     </form>
